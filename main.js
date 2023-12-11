@@ -1,4 +1,4 @@
-const carrito = [];
+let carrito = [];
 class Mercaderia {
   constructor(nombre, talle, precio) {
     this.nombre = nombre;
@@ -15,12 +15,9 @@ const producto3 = new Mercaderia("Medias", "M", 12);
 let productoIngresado = prompt(
   "Ingresa el producto que deseas:\nRemeras\nCalzoncillos,\nMedias\nPRESIONA CANCELAR PARA SALIR"
 );
+
 while (productoIngresado != null) {
   alert("Has ingresado " + productoIngresado.toUpperCase());
-  productoIngresado = prompt(
-    "Ingresa otro producto\nRemeras\nCalzoncillos,\nMedias\nPRESIONA CANCELAR PARA SALIR"
-  );
-
   if (
     productoIngresado === "remeras" ||
     productoIngresado === "Remeras" ||
@@ -40,14 +37,16 @@ while (productoIngresado != null) {
   ) {
     carrito.push(producto3);
   }
-}
 
-function presentarProducto() {
-  console.log(
-    "Tu carrito contiene " + this.nombre + " y cuesta " + this.precio
+  productoIngresado = prompt(
+    "Ingresa otro producto\nRemeras\nCalzoncillos,\nMedias\nPRESIONA CANCELAR PARA SALIR"
   );
-  //console.log("Tu carrito contiene " + carrito);
+}
+function presentarProducto() {
+  for (let i = 0; i < Mercaderia.length; i++) {
+    console.log("Tu carrito contiene " + Mercaderia[i]);
+  }
 }
 presentarProducto();
 
-console.log(carrito);
+//console.log(carrito);
