@@ -43,10 +43,14 @@ while (productoIngresado != null) {
   );
 }
 function presentarProducto() {
-  for (let i = 0; i < Mercaderia.length; i++) {
-    console.log("Tu carrito contiene " + Mercaderia[i]);
+  for (let i = 0; i < carrito.length; i++) {
+    console.log(
+      "Tu carrito contiene " +
+        carrito[i].nombre +
+        " y cuestan $" +
+        carrito[i].precio
+    );
   }
 }
 presentarProducto();
-
-//console.log(carrito);
+console.log(carrito);
